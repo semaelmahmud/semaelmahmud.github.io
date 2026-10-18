@@ -3,79 +3,109 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
 <title>Sema Elmahmud</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@400;500;700&family=Pacifico&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#FFF6FA; --surface:#FFFFFF; --pink:#F8BBD9; --pink-soft:#FDE3EE;
-  --lilac:#D7B8F3; --lilac-soft:#EEE3FA; --ink:#4A2C5E; --muted:#7B6590; --line:#EBD5F2;
-  --link:#8A3FB0;
+  color-scheme:light;
+  --bg:#FFF0F6; --surface:#FFFFFF; --pink:#F8BBD9; --pink-mid:#EE9DC4; --pink-deep:#D9679F;
+  --pink-soft:#FFE0EE; --ink:#7A2E57; --muted:#A8688A; --line:#F6D3E3;
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --bg:#1F1527; --surface:#2A1D36; --pink:#C9779F; --pink-soft:#3A2442;
-    --lilac:#9C78C9; --lilac-soft:#33244A; --ink:#F7E8F6; --muted:#C2ACD3; --line:#463259; --link:#E7B6F5;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#1F1527; --surface:#2A1D36; --pink:#C9779F; --pink-soft:#3A2442;
-  --lilac:#9C78C9; --lilac-soft:#33244A; --ink:#F7E8F6; --muted:#C2ACD3; --line:#463259; --link:#E7B6F5;
 }
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "DM Sans",system-ui,sans-serif}
-a{color:var(--link)}
-a:focus-visible,button:focus-visible{outline:3px solid var(--lilac);outline-offset:3px;border-radius:6px}
+a{color:var(--pink-deep)}
+a:focus-visible{outline:3px solid var(--pink-mid);outline-offset:3px;border-radius:6px}
 .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+svg.ic{display:inline-block;vertical-align:middle}
 
 nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
-nav .logo{font:700 20px "Fraunces",serif;text-decoration:none;color:var(--ink)}
+nav .logo{font:700 22px "Fraunces",serif;text-decoration:none;color:var(--ink)}
 nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
 nav ul a{text-decoration:none;color:var(--muted);font-weight:500}
-nav ul a:hover{color:var(--ink)}
+nav ul a:hover{color:var(--pink-deep)}
 
-.hero{position:relative;padding:56px 0 88px;overflow:hidden}
-.blob{position:absolute;right:-90px;top:-10px;width:420px;height:420px;z-index:0;
-  background:linear-gradient(135deg,var(--pink),var(--lilac));
-  border-radius:58% 42% 63% 37% / 45% 55% 45% 55%;opacity:.85;animation:float 14s ease-in-out infinite alternate}
-@keyframes float{to{border-radius:40% 60% 38% 62% / 58% 40% 60% 42%;transform:rotate(12deg) translateY(10px)}}
-@media (prefers-reduced-motion:reduce){.blob{animation:none}}
-.hero>*{position:relative;z-index:1}
-.hello{font:italic 500 22px "Fraunces",serif;color:var(--link);margin:0 0 6px}
-h1{font:700 clamp(52px,12vw,104px)/.98 "Fraunces",serif;letter-spacing:-.02em;margin:0 0 22px}
-.lead{max-width:30em;font-size:20px;color:var(--ink);margin:0 0 30px}
-.btns{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-block;padding:12px 24px;border-radius:999px;text-decoration:none;font-weight:700;border:2px solid var(--ink);color:var(--ink);background:transparent;transition:transform .15s}
-.btn.fill{background:var(--ink);color:var(--bg)}
+.hero{position:relative;padding:48px 0 84px}
+.hello{font:italic 500 24px "Fraunces",serif;color:var(--pink-deep);margin:0 0 6px;display:flex;align-items:center;gap:10px}
+h1{font:700 clamp(50px,11vw,96px)/1 "Fraunces",serif;letter-spacing:-.02em;margin:0 0 22px;position:relative;z-index:1}
+.lead{max-width:28em;font-size:20px;margin:0 0 30px;position:relative;z-index:1}
+.btns{display:flex;flex-wrap:wrap;gap:12px;position:relative;z-index:1}
+.btn{display:inline-block;padding:12px 24px;border-radius:999px;text-decoration:none;font-weight:700;border:2px solid var(--pink-deep);color:var(--pink-deep);transition:transform .15s}
+.btn.fill{background:var(--pink-deep);color:#fff}
 .btn:hover{transform:translateY(-2px)}
 
-section{padding:56px 0;border-top:1px solid var(--line)}
-h2{font:700 36px/1.15 "Fraunces",serif;margin:0 0 20px}
+.welcome{font-family:Pacifico,cursive;font-size:clamp(40px,9vw,76px);line-height:1.25;margin:0 0 22px;display:flex;flex-wrap:wrap;align-items:center;gap:0 18px;position:relative;z-index:1}
+.welcome .w{display:inline-flex}
+.welcome .l{display:inline-block;color:var(--pink-deep);background:linear-gradient(135deg,#F4A6CD,#D9679F);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:wave 2.6s ease-in-out infinite;animation-delay:calc(var(--i)*.1s)}
+.welcome .spin{width:.7em;height:.7em;animation:turn 9s linear infinite}
+@keyframes wave{0%,55%,100%{transform:translateY(0) rotate(0)}25%{transform:translateY(-14px) rotate(-4deg)}}
+@keyframes turn{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.welcome .l,.welcome .spin{animation:none}}
+.deco{position:absolute;right:0;top:20px;width:300px;height:300px;pointer-events:none}
+.deco .b1{position:absolute;right:30px;top:10px;width:110px;transform:rotate(14deg);animation:flap 3.5s ease-in-out infinite alternate}
+.deco .b2{position:absolute;right:150px;top:120px;width:60px;transform:rotate(-18deg);animation:flap 4.5s ease-in-out infinite alternate}
+.deco .f1{position:absolute;right:10px;top:150px;width:64px}
+.deco .f2{position:absolute;right:100px;top:210px;width:40px}
+.deco .f3{position:absolute;right:190px;top:20px;width:34px}
+@keyframes flap{to{transform:rotate(4deg) translateY(-8px) scale(.96)}}
+@media (prefers-reduced-motion:reduce){.deco .b1,.deco .b2{animation:none}}
+@media (max-width:640px){.deco{opacity:.55;width:200px;height:200px;top:0}.deco .b1{width:70px}.deco .b2{right:90px;top:80px;width:40px}.deco .f1{width:42px;top:100px}.deco .f2,.deco .f3{display:none}}
+
+section{padding:52px 0;border-top:1px solid var(--line)}
+h2{font:700 36px/1.15 "Fraunces",serif;margin:0 0 20px;display:flex;align-items:center;gap:12px}
 p{margin:0 0 16px;max-width:38em}
 .muted{color:var(--muted)}
 
 .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:24px}
-.group{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:22px 24px}
-.group:nth-child(2){border-radius:22px 22px 22px 56px}
+.group{background:var(--surface);border:1.5px solid var(--line);border-radius:24px;padding:22px 24px}
 .group h3{font:700 20px "Fraunces",serif;margin:0 0 12px}
 .tags{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none}
 .tags li{padding:6px 14px;border-radius:999px;background:var(--pink-soft);font-weight:500;font-size:15px}
-.tags.lil li{background:var(--lilac-soft)}
+.tags.deep li{background:var(--pink)}
 
-.soon{background:var(--lilac-soft);border-radius:28px;padding:30px;max-width:38em}
+.soon{background:var(--pink-soft);border-radius:28px;padding:30px;max-width:38em;position:relative}
 .soon h3{font:700 22px "Fraunces",serif;margin:0 0 8px}
 .soon p{margin:0}
 
 .contact a{display:block;font-size:20px;font-weight:500;padding:6px 0}
 footer{padding:36px 0 48px;color:var(--muted);font-size:15px;text-align:center}
-@media (max-width:560px){nav ul{gap:14px}.blob{width:280px;height:280px;right:-90px}}
+footer .row{display:flex;justify-content:center;align-items:center;gap:14px;margin-bottom:10px}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="bow" viewBox="0 0 80 48">
+      <path d="M40 24C28 6 4 4 6 24c-2 20 22 18 34 0Z" fill="#F8BBD9" stroke="#D9679F" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M40 24C52 6 76 4 74 24c2 20-22 18-34 0Z" fill="#F8BBD9" stroke="#D9679F" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M37 30 28 46l9-4 3-8Z" fill="#EE9DC4" stroke="#D9679F" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M43 30 52 46l-9-4-3-8Z" fill="#EE9DC4" stroke="#D9679F" stroke-width="2.5" stroke-linejoin="round"/>
+      <rect x="33" y="16" width="14" height="16" rx="6" fill="#D9679F"/>
+    </symbol>
+    <symbol id="butterfly" viewBox="0 0 64 52">
+      <path d="M32 26C20 2 1 5 6 23c3 9 18 8 26 3Z" fill="#F8BBD9" stroke="#D9679F" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M32 28C22 32 10 35 14 45c5 8 15-2 18-17Z" fill="#EE9DC4" stroke="#D9679F" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M32 26C44 2 63 5 58 23c-3 9-18 8-26 3Z" fill="#F8BBD9" stroke="#D9679F" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M32 28C42 32 54 35 50 45c-5 8-15-2-18-17Z" fill="#EE9DC4" stroke="#D9679F" stroke-width="2" stroke-linejoin="round"/>
+      <circle cx="17" cy="17" r="3.5" fill="#FFF0F6"/><circle cx="47" cy="17" r="3.5" fill="#FFF0F6"/>
+      <rect x="29.5" y="16" width="5" height="26" rx="2.5" fill="#D9679F"/>
+      <path d="M31 16C28 8 25 6 23 5M33 16C36 8 39 6 41 5" stroke="#D9679F" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="flower" viewBox="0 0 48 48">
+      <g fill="#F8BBD9" stroke="#D9679F" stroke-width="1.8">
+        <circle cx="24" cy="12" r="8.5"/><circle cx="35.5" cy="20.5" r="8.5"/><circle cx="31" cy="34" r="8.5"/>
+        <circle cx="17" cy="34" r="8.5"/><circle cx="12.5" cy="20.5" r="8.5"/>
+      </g>
+      <circle cx="24" cy="24" r="6" fill="#D9679F"/><circle cx="24" cy="24" r="2.4" fill="#FFF0F6"/>
+    </symbol>
+  </defs>
+</svg>
+
 <div class="wrap">
   <nav>
     <a class="logo" href="#top">Sema</a>
@@ -88,8 +118,18 @@ footer{padding:36px 0 48px;color:var(--muted);font-size:15px;text-align:center}
   </nav>
 
   <header class="hero" id="top">
-    <div class="blob" aria-hidden="true"></div>
-    <p class="hello">Hi, I’m</p>
+    <div class="deco" aria-hidden="true">
+      <svg class="b1"><use href="#butterfly"/></svg>
+      <svg class="b2"><use href="#butterfly"/></svg>
+      <svg class="f1"><use href="#flower"/></svg>
+      <svg class="f2"><use href="#flower"/></svg>
+      <svg class="f3"><use href="#flower"/></svg>
+    </div>
+    <p class="welcome" aria-label="Welcome">
+      <span class="w" aria-hidden="true"><span class="l" style="--i:0">W</span><span class="l" style="--i:1">e</span><span class="l" style="--i:2">l</span><span class="l" style="--i:3">c</span><span class="l" style="--i:4">o</span><span class="l" style="--i:5">m</span><span class="l" style="--i:6">e</span></span>
+      <svg class="ic spin" viewBox="0 0 48 48" aria-hidden="true"><use href="#flower"/></svg>
+    </p>
+    <p class="hello">Hi, I’m <svg class="ic" width="56" height="34" viewBox="0 0 80 48" aria-hidden="true"><use href="#bow"/></svg></p>
     <h1>Sema<br>Elmahmud</h1>
     <p class="lead">Software Engineering student at Fırat University, working towards becoming an AI engineer.</p>
     <div class="btns">
@@ -99,13 +139,13 @@ footer{padding:36px 0 48px;color:var(--muted);font-size:15px;text-align:center}
   </header>
 
   <section id="about">
-    <h2>About me</h2>
+    <h2><svg class="ic" width="30" height="30" viewBox="0 0 48 48" aria-hidden="true"><use href="#flower"/></svg>About me</h2>
     <p>I’m a Software Engineering student at the Faculty of Technology, Fırat University. I’m building my foundation in Java and C#, and I’ve recently started learning Python to move towards artificial intelligence and machine learning.</p>
     <p class="muted">I’m looking for a summer internship where I can learn from real projects and contribute as much as I can.</p>
   </section>
 
   <section id="skills">
-    <h2>Skills</h2>
+    <h2><svg class="ic" width="34" height="28" viewBox="0 0 64 52" aria-hidden="true"><use href="#butterfly"/></svg>Skills</h2>
     <div class="skills">
       <div class="group">
         <h3>Languages</h3>
@@ -113,7 +153,7 @@ footer{padding:36px 0 48px;color:var(--muted);font-size:15px;text-align:center}
       </div>
       <div class="group">
         <h3>Tools</h3>
-        <ul class="tags lil"><li>Git</li><li>GitHub</li><li>VS Code</li><li>Visual Studio</li></ul>
+        <ul class="tags deep"><li>Git</li><li>GitHub</li><li>VS Code</li><li>Visual Studio</li></ul>
       </div>
       <div class="group">
         <h3>Currently learning</h3>
@@ -123,7 +163,7 @@ footer{padding:36px 0 48px;color:var(--muted);font-size:15px;text-align:center}
   </section>
 
   <section id="projects">
-    <h2>Projects</h2>
+    <h2><svg class="ic" width="40" height="24" viewBox="0 0 80 48" aria-hidden="true"><use href="#bow"/></svg>Projects</h2>
     <div class="soon">
       <h3>My first projects are on the way</h3>
       <p>I’m working on small Python and machine learning projects. They will appear here and on my <a href="https://github.com/semaelmahmud">GitHub</a> as soon as they’re ready.</p>
@@ -131,14 +171,21 @@ footer{padding:36px 0 48px;color:var(--muted);font-size:15px;text-align:center}
   </section>
 
   <section id="contact" class="contact">
-    <h2>Contact</h2>
+    <h2><svg class="ic" width="30" height="30" viewBox="0 0 48 48" aria-hidden="true"><use href="#flower"/></svg>Contact</h2>
     <p class="muted">The best way to reach me is by email or LinkedIn.</p>
     <a href="mailto:semaelmahmudeng.2007@gmail.com">semaelmahmudeng.2007@gmail.com</a>
     <a href="https://www.linkedin.com/in/sema-elmahmud-eng">LinkedIn</a>
     <a href="https://github.com/semaelmahmud">GitHub</a>
   </section>
 
-  <footer>Sema Elmahmud · Fırat University</footer>
+  <footer>
+    <div class="row" aria-hidden="true">
+      <svg class="ic" width="26" height="26" viewBox="0 0 48 48"><use href="#flower"/></svg>
+      <svg class="ic" width="50" height="30" viewBox="0 0 80 48"><use href="#bow"/></svg>
+      <svg class="ic" width="26" height="26" viewBox="0 0 48 48"><use href="#flower"/></svg>
+    </div>
+    Sema Elmahmud · Fırat University
+  </footer>
 </div>
 </body>
 </html>
