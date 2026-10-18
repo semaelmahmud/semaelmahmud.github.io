@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sema Elmahmud</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFF6FA; --surface:#FFFFFF; --pink:#F8BBD9; --pink-soft:#FDE3EE;
+  --lilac:#D7B8F3; --lilac-soft:#EEE3FA; --ink:#4A2C5E; --muted:#7B6590; --line:#EBD5F2;
+  --link:#8A3FB0;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#1F1527; --surface:#2A1D36; --pink:#C9779F; --pink-soft:#3A2442;
+    --lilac:#9C78C9; --lilac-soft:#33244A; --ink:#F7E8F6; --muted:#C2ACD3; --line:#463259; --link:#E7B6F5;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1F1527; --surface:#2A1D36; --pink:#C9779F; --pink-soft:#3A2442;
+  --lilac:#9C78C9; --lilac-soft:#33244A; --ink:#F7E8F6; --muted:#C2ACD3; --line:#463259; --link:#E7B6F5;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "DM Sans",system-ui,sans-serif}
+a{color:var(--link)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--lilac);outline-offset:3px;border-radius:6px}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+nav .logo{font:700 20px "Fraunces",serif;text-decoration:none;color:var(--ink)}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+nav ul a{text-decoration:none;color:var(--muted);font-weight:500}
+nav ul a:hover{color:var(--ink)}
+
+.hero{position:relative;padding:56px 0 88px;overflow:hidden}
+.blob{position:absolute;right:-90px;top:-10px;width:420px;height:420px;z-index:0;
+  background:linear-gradient(135deg,var(--pink),var(--lilac));
+  border-radius:58% 42% 63% 37% / 45% 55% 45% 55%;opacity:.85;animation:float 14s ease-in-out infinite alternate}
+@keyframes float{to{border-radius:40% 60% 38% 62% / 58% 40% 60% 42%;transform:rotate(12deg) translateY(10px)}}
+@media (prefers-reduced-motion:reduce){.blob{animation:none}}
+.hero>*{position:relative;z-index:1}
+.hello{font:italic 500 22px "Fraunces",serif;color:var(--link);margin:0 0 6px}
+h1{font:700 clamp(52px,12vw,104px)/.98 "Fraunces",serif;letter-spacing:-.02em;margin:0 0 22px}
+.lead{max-width:30em;font-size:20px;color:var(--ink);margin:0 0 30px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 24px;border-radius:999px;text-decoration:none;font-weight:700;border:2px solid var(--ink);color:var(--ink);background:transparent;transition:transform .15s}
+.btn.fill{background:var(--ink);color:var(--bg)}
+.btn:hover{transform:translateY(-2px)}
+
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font:700 36px/1.15 "Fraunces",serif;margin:0 0 20px}
+p{margin:0 0 16px;max-width:38em}
+.muted{color:var(--muted)}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:24px}
+.group{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:22px 24px}
+.group:nth-child(2){border-radius:22px 22px 22px 56px}
+.group h3{font:700 20px "Fraunces",serif;margin:0 0 12px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none}
+.tags li{padding:6px 14px;border-radius:999px;background:var(--pink-soft);font-weight:500;font-size:15px}
+.tags.lil li{background:var(--lilac-soft)}
+
+.soon{background:var(--lilac-soft);border-radius:28px;padding:30px;max-width:38em}
+.soon h3{font:700 22px "Fraunces",serif;margin:0 0 8px}
+.soon p{margin:0}
+
+.contact a{display:block;font-size:20px;font-weight:500;padding:6px 0}
+footer{padding:36px 0 48px;color:var(--muted);font-size:15px;text-align:center}
+@media (max-width:560px){nav ul{gap:14px}.blob{width:280px;height:280px;right:-90px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="logo" href="#top">Sema</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="blob" aria-hidden="true"></div>
+    <p class="hello">Hi, I’m</p>
+    <h1>Sema<br>Elmahmud</h1>
+    <p class="lead">Software Engineering student at Fırat University, working towards becoming an AI engineer.</p>
+    <div class="btns">
+      <a class="btn fill" href="https://github.com/semaelmahmud">See my GitHub</a>
+      <a class="btn" href="#contact">Get in touch</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About me</h2>
+    <p>I’m a Software Engineering student at the Faculty of Technology, Fırat University. I’m building my foundation in Java and C#, and I’ve recently started learning Python to move towards artificial intelligence and machine learning.</p>
+    <p class="muted">I’m looking for a summer internship where I can learn from real projects and contribute as much as I can.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="group">
+        <h3>Languages</h3>
+        <ul class="tags"><li>Java</li><li>C#</li><li>Python (just started)</li></ul>
+      </div>
+      <div class="group">
+        <h3>Tools</h3>
+        <ul class="tags lil"><li>Git</li><li>GitHub</li><li>VS Code</li><li>Visual Studio</li></ul>
+      </div>
+      <div class="group">
+        <h3>Currently learning</h3>
+        <ul class="tags"><li>Machine Learning basics</li><li>Databases &amp; SQL</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="soon">
+      <h3>My first projects are on the way</h3>
+      <p>I’m working on small Python and machine learning projects. They will appear here and on my <a href="https://github.com/semaelmahmud">GitHub</a> as soon as they’re ready.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p class="muted">The best way to reach me is by email or LinkedIn.</p>
+    <a href="mailto:semaelmahmudeng.2007@gmail.com">semaelmahmudeng.2007@gmail.com</a>
+    <a href="https://www.linkedin.com/in/sema-elmahmud-eng">LinkedIn</a>
+    <a href="https://github.com/semaelmahmud">GitHub</a>
+  </section>
+
+  <footer>Sema Elmahmud · Fırat University</footer>
+</div>
+</body>
+</html>
